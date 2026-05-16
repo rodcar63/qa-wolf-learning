@@ -1,15 +1,28 @@
 function addTask() {
-  const input = document.getElementById("taskInput");
-  const text = input.value;
+  const taskInput = document.getElementById('taskInput');
+  const taskText = taskInput.value.trim();
 
-  if (!text) return;
+  if (!taskText) return;
 
-  const li = document.createElement("li");
-  li.textContent = text;
+  const li = document.createElement('li');
+  li.setAttribute('data-testid', 'task-item');
 
-  li.onclick = () => li.remove();
+  const taskTextSpan = document.createElement('span');
+  taskTextSpan.textContent = taskText;
+  taskTextSpan.setAttribute('data-testid', 'task-text');
 
-  document.getElementById("taskList").appendChild(li);
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.setAttribute('data-testid', 'delete-task-btn');
 
-  input.value = "";
+  deleteBtn.onclick = () => {
+    li.remove();
+  };
+
+  li.appendChild(taskTextSpan);
+  li.appendChild(deleteBtn);
+
+  document.getElementById('taskList').appendChild(li);
+
+  taskInput.value = '';
 }

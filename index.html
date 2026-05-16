@@ -7,10 +7,18 @@
 <body>
   <h1>Task Tracker</h1>
 
-  <input id="taskInput" placeholder="Enter task">
-  <button onclick="addTask()">Add</button>
+<input
+  type="text"
+  id="taskInput"
+  placeholder="Enter a task"
+  data-testid="task-input"
+/>
 
-  <ul id="taskList"></ul>
+<button data-testid="add-task-btn">
+  Add Task
+</button>
+
+<ul id="taskList" data-testid="task-list"></ul>
 
   <script src="script.js"></script>
 </body>
