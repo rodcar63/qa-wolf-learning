@@ -33,7 +33,7 @@ document
   .addEventListener('click', addTask);
 
 /* allow adding task with Enter key */
-  document
+document
   .getElementById('taskInput')
   .addEventListener('keypress', function (e) {
     if (e.key === 'Enter') addTask();
