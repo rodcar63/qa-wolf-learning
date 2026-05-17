@@ -31,3 +31,10 @@ function addTask() {
 document
   .querySelector('[data-testid="add-task-btn"]')
   .addEventListener('click', addTask);
+
+/* allow adding task with Enter key */
+  document
+  .getElementById('taskInput')
+  .addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') addTask();
+  });
