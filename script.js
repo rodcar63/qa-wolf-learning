@@ -26,3 +26,8 @@ function addTask() {
 
   taskInput.value = '';
 }
+
+/* connect button click to the function */
+document
+  .querySelector('[data-testid="add-task-btn"]')
+  .addEventListener('click', addTask);

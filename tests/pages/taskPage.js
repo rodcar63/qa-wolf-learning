@@ -10,9 +10,13 @@ class TaskPage {
     this.deleteButtons = page.getByTestId('delete-task-btn');
   }
 
-  async goto() {
-    await this.page.goto('https://rodcar63.github.io/qa-wolf-learning/');
-  }
+async goto() {
+  await this.page.goto('/');
+
+//  console.log('CURRENT URL:', this.page.url());
+//  console.log('PAGE CONTENT START:');
+//  console.log(await this.page.content());
+}
 
   async addTask(taskText) {
     await this.taskInput.fill(taskText);
